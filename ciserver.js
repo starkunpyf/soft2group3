@@ -1,5 +1,5 @@
 const http=require('http')
-const child=require('child.process')
+const child=require('child_process')
 
 var server=http.createServer()
 server.on('request',function (req,res) {
