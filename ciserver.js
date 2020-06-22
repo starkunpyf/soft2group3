@@ -1,0 +1,15 @@
+const http=require('http')
+const child=require('child.process')
+
+var server=http.createServer()
+server.on('request',function (req,res) {
+    res.end("success!!")
+    child.execFile('./cibuild.sh',function (error,stdout,stderr) {
+        console.log((stdout))
+    })
+})
+
+server.listen(3201,function (err) {
+    if (!err)
+        console.log("sever start at port: "+3201)
+})
